@@ -9,7 +9,7 @@
           {% endif %}
         {% endunless %}
       {% endfor %}
-      <li><button type="button" class="skills-list__pill" data-skill="{{ skill | escape }}" aria-pressed="false">{{ skill | escape }}{% if project_count > 0 %}<span class="skills-list__count" aria-label="{{ project_count }} projects">{{ project_count }}</span>{% endif %}</button></li>
+      <li><button type="button" class="skills-list__pill" data-skill="{{ skill | escape }}" aria-pressed="false">{{ skill | escape }}<span class="skills-list__count" aria-label="{{ project_count }} projects"{% if project_count == 0 %} hidden{% endif %}>{{ project_count }}</span></button></li>
     {% endfor %}
   </ul>
 {% endfor %}

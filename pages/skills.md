@@ -11,6 +11,11 @@ weight: 3
 
 {% include about/skills-list.html %}
 
+<div class="skills-actions">
+  <button type="button" class="skills-clear" hidden>Clear selected</button>
+  <p class="skills-prompt" role="status">Click any skill to view relevant projects.</p>
+</div>
+
 <section class="project-list skills-results" aria-label="Matching projects" hidden>
   {% assign sort_records = '' %}
   {% for project in site.projects %}
