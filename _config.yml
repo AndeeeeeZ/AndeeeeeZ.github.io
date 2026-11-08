@@ -1,6 +1,6 @@
 ### Site Settings ###
 title               : Andi Zhu | Game Developer
-description         : Game development student showcasing games and projects
+description         : A Game Dev and Programmer
 baseurl             : ""            # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : AndeeeeeZ/AndeeeeeZ.github.io      # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : yousinix/portfolYOU
@@ -55,8 +55,8 @@ collections:
   projects:
     output: true
     permalink: /projects/:name
-  elements:                                             # For Documentation Only
-    output: true                                        # For Documentation Only
+#  elements:                                             # For Documentation Only
+#    output: true                                        # For Documentation Only
 
 
 ### Disqus ###
@@ -88,11 +88,11 @@ defaults:
       type: "projects"
     values:
       layout: "page"
-  - scope:                                              # For Documentation Only
-      path: ""                                          # For Documentation Only
-      type: "elements"                                  # For Documentation Only
-    values:                                             # For Documentation Only
-      layout: "element"                                 # For Documentation Only
+#  - scope:                                              # For Documentation Only
+#      path: ""                                          # For Documentation Only
+#      type: "elements"                                  # For Documentation Only
+#    values:                                             # For Documentation Only
+#      layout: "element"                                 # For Documentation Only
   - scope:
       path: ""
       type: "posts"

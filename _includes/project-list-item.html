@@ -1,0 +1,18 @@
+{% assign project = include.project %}
+{% assign project_url = project.external_url | default: project.url %}
+<article class="project-list-item{% unless project.image %} project-list-item--no-image{% endunless %}">
+  {% if project.image %}
+    <a class="project-list-item__image" href="{{ project_url }}" aria-label="View {{ project.name | escape }}">
+      <img src="{% if project.image contains '://' %}{{ project.image }}{% else %}{{ project.image | relative_url }}{% endif %}" alt="{{ project.name | escape }} preview" loading="lazy">
+    </a>
+  {% endif %}
+  <div class="project-list-item__content">
+    <h2><a href="{{ project_url }}">{{ project.name | escape }}</a></h2>
+    {% if project.description %}<p>{{ project.description | escape }}</p>{% endif %}
+    {% if project.tools and project.tools.size > 0 %}
+      <ul class="project-list-item__tools" aria-label="Tools used">
+        {% for tool in project.tools %}<li>{{ tool | escape }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</article>

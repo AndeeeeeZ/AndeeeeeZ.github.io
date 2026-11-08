@@ -3,9 +3,13 @@ layout: default
 title: Projects
 permalink: /projects/
 weight: 1
-remote_projects: 
-  - git-for-wizards
-  - arduino-visitor-counter
 ---
 
-{% include projects/index.html %}
+<link rel="stylesheet" href="{{ '/assets/css/projects.css' | relative_url }}">
+
+<section class="project-list" aria-label="Projects">
+  {% assign projects = site.projects | sort: 'order' %}
+  {% for project in projects %}
+    {% include project-list-item.html project=project %}
+  {% endfor %}
+</section>
