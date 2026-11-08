@@ -1,6 +1,6 @@
 ---
 name: Cryptids Don't Exist
-tools: [C#, Unity 2D]
+tools: [C#, Unity, 2D]
 features: [Team Project, Mini Games]
 start_date: 09-2026
 end_date: 10-2026

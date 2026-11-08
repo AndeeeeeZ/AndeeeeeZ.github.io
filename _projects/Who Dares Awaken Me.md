@@ -4,7 +4,8 @@ description: A short description of the project.
 image: /assets/project-cover/WhoDaresAwakenMeCover.png
 tools:
     - C#
-    - Unity 3D
+    - Unity
+    - 3D
     - NavMesh
 start_date: 2026-01
 end_date: 2026-06

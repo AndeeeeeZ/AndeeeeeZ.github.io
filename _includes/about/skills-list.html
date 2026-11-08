@@ -1,0 +1,39 @@
+{% for section in site.data.skills %}
+  <ul class="skills-list skills-list--{{ section.color | escape }}" aria-label="{{ section.name | escape }}">
+    {% for skill in section.skills %}
+      {% assign project_count = 0 %}
+      {% for project in site.projects %}
+        {% unless project.published == false %}
+          {% if project.tools contains skill %}
+            {% assign project_count = project_count | plus: 1 %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+      <li><button type="button" class="skills-list__pill" data-skill="{{ skill | escape }}" aria-pressed="false">{{ skill | escape }}{% if project_count > 0 %}<span class="skills-list__count" aria-label="{{ project_count }} projects">{{ project_count }}</span>{% endif %}</button></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
+{% assign known_skills = '|' %}
+{% for section in site.data.skills %}
+  {% for skill in section.skills %}
+    {% assign skill_key = skill | prepend: '|' | append: '|' %}
+    {% assign known_skills = known_skills | append: skill_key %}
+  {% endfor %}
+{% endfor %}
+{% assign missing_skills = '' %}
+{% for project in site.projects %}
+  {% unless project.published == false %}
+    {% for tool in project.tools %}
+      {% assign tool_key = tool | prepend: '|' | append: '|' %}
+      {% unless known_skills contains tool_key %}
+        {% unless missing_skills contains tool_key %}
+          {% assign missing_skills = missing_skills | append: tool_key %}
+        {% endunless %}
+      {% endunless %}
+    {% endfor %}
+  {% endunless %}
+{% endfor %}
+{% if missing_skills != '' %}
+  <p class="skills-list__notice">Project tools missing from the skills list: {{ missing_skills | remove_first: '|' | split: '||' | join: ', ' | remove: '|' | escape }}. Add them to <code>_data/skills.yml</code>.</p>
+{% endif %}

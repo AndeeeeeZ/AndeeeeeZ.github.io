@@ -1,6 +1,6 @@
 ---
 name: plant, that thou shalt not touch
-tools: [C#, Unity 2D]
+tools: [C#, Unity, 2D]
 start_date: 4-2026
 end_date: 4-2026
 image: /assets/project-cover/plantThatThouShaltNotTouchCover.png

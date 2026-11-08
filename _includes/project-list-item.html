@@ -1,6 +1,6 @@
 {% assign project = include.project %}
 {% assign project_url = project.external_url | default: project.url %}
-<article class="project-list-item{% unless project.image %} project-list-item--no-image{% endunless %}{% if project.top == true %} project-list-item--top{% endif %}">
+<article class="project-list-item{% unless project.image %} project-list-item--no-image{% endunless %}{% if project.top == true %} project-list-item--top{% endif %}"{% if include.filterable %} data-tools="{{ project.tools | jsonify | escape }}"{% endif %}>
   {% if project.image %}
     <a class="project-list-item__image" href="{{ project_url }}" aria-label="View {{ project.name | escape }}">
       <img src="{% if project.image contains '://' %}{{ project.image }}{% else %}{{ project.image | relative_url }}{% endif %}" alt="{{ project.name | escape }} preview" loading="lazy">
