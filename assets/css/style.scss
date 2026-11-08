@@ -4,3 +4,43 @@
 
 .navbar-brand h5 { font-size: clamp(1.25rem, 2.5vw, 1.625rem); }
 .navbar-themed .navbar-nav .nav-link { font-size: clamp(1.1rem, 1.8vw, 1.25rem); }
+
+.home-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  max-width: 1100px;
+  min-height: 65vh;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+}
+
+.home-intro-portrait { text-align: center; animation: home-scale-in 0.8s ease-out both; }
+.home-intro-portrait img { display: block; width: min(100%, 400px); height: auto; margin: 0 auto; border-radius: 50%; animation: home-float 3s ease-in-out infinite; }
+.home-intro-portrait p { margin: 1.25rem 0 0; color: var(--secondary, #999); font-size: 1.25rem; }
+.home-intro-copy h1 { margin-bottom: 1.5rem; font-size: clamp(2rem, 4vw, 3rem); }
+.home-intro-copy p { max-width: 34rem; font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.7; }
+.home-intro-copy p + p { margin-top: 1.75rem; }
+.home-intro-copy a { color: #69b8ed; }
+.home-intro-copy a:hover, .home-intro-copy a:focus { color: #9bd4fa; }
+
+@keyframes home-scale-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes home-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-intro-portrait, .home-intro-portrait img { animation: none; }
+}
+
+@media (max-width: 767px) {
+  .home-intro { grid-template-columns: 1fr; min-height: auto; gap: 2.5rem; margin: 1rem auto; }
+  .home-intro-portrait img { width: min(75vw, 320px); }
+  .home-intro-copy { max-width: 34rem; margin: 0 auto; }
+}
