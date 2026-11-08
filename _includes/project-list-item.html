@@ -7,12 +7,28 @@
     </a>
   {% endif %}
   <div class="project-list-item__content">
-    <h2><a href="{{ project_url }}">{{ project.name | escape }}</a></h2>
+    <div class="project-list-item__heading">
+      <h2><a href="{{ project_url }}">{{ project.name | escape }}</a></h2>
+      {% if project.start_date %}
+        <p class="project-list-item__date">
+          <time datetime="{{ project.start_date | date: '%Y-%m' }}">{{ project.start_date | date: '%b %Y' }}</time>
+          <span aria-hidden="true">–</span>
+          {% if project.end_date %}<time datetime="{{ project.end_date | date: '%Y-%m' }}">{{ project.end_date | date: '%b %Y' }}</time>{% else %}Current{% endif %}
+        </p>
+      {% endif %}
+    </div>
     {% if project.description %}<p>{{ project.description | escape }}</p>{% endif %}
     {% if project.tools and project.tools.size > 0 %}
       <ul class="project-list-item__tools" aria-label="Tools used">
         {% for tool in project.tools %}<li>{{ tool | escape }}</li>{% endfor %}
       </ul>
+    {% endif %}
+    {% if project.features and project.features.size > 0 %}
+      <div class="project-list-item__feature-section">
+        <ul class="project-list-item__features" aria-label="Features">
+          {% for feature in project.features %}<li>{{ feature | escape }}</li>{% endfor %}
+        </ul>
+      </div>
     {% endif %}
   </div>
 </article>
