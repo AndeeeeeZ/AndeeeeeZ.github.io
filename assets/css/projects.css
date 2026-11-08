@@ -5,16 +5,16 @@
 .project-list-item__image { position: relative; display: block; width: 100%; aspect-ratio: 5 / 4; align-self: center; background: inherit; }
 .project-list-item__image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .project-list-item__content { align-self: start; padding: 2rem; }
-.project-list-item__heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .4rem 1.25rem; margin-bottom: .75rem; }
-.project-list-item__date { margin: 0 0 0 auto; color: #5f6368; font-size: .9rem; white-space: nowrap; }
-.project-list-item h2 { margin: 0 0 .75rem; font-size: clamp(1.4rem, 2.5vw, 2rem); }
+.project-list-item__heading { display: flex; flex-direction: column; align-items: flex-start; gap: .25rem; margin-bottom: .75rem; }
+.project-list-item .project-list-item__date { margin: 0; color: #5f6368; font-size: .9rem; white-space: nowrap; }
+.project-list-item h2 { margin: 0 0 .75rem; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; }
 .project-list-item__heading h2 { margin: 0; }
 .project-list-item h2 a { color: inherit; }
 .project-list-item h2 a:hover { color: #0056b3; }
 .project-list-item p { margin-bottom: 1.25rem; line-height: 1.6; }
 .project-list-item__tools, .skills-list { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
 .project-list-item__tools li { padding: .2rem .65rem; border: 1px solid #0056b3; border-radius: 999px; color: #0056b3; font-size: .85rem; }
-.skills-page h1 { margin-bottom: 1.5rem; }
+.markdown-body .page-heading { margin-bottom: 1.5rem; }
 .skills-list { margin-bottom: 1rem; }
 .skills-list--blue { --skill-color: #0056b3; --skill-hover: #dcecff; --skill-pressed: #003d80; }
 .skills-list--yellow { --skill-color: #8a6500; --skill-hover: #fff1c2; --skill-pressed: #604600; }
@@ -29,15 +29,13 @@
 .skills-list__count { color: #6c757d; font-size: .8rem; }
 .skills-list__count[hidden] { display: none; }
 .skills-list__notice { margin-top: 1.5rem; }
-.skills-actions { display: flex; flex-direction: column; align-items: stretch; gap: 0; margin-top: 1rem; }
-.skills-actions .skills-prompt { margin: 4rem 0 0; }
-.skills-prompt, .skills-results-empty { width: 100%; color: #697178; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; text-align: center; text-transform: uppercase; }
+.skills-actions { display: flex; flex-direction: column; align-items: stretch; gap: 0; min-height: 3rem; margin-top: 1rem; }
+.skills-status { width: 100%; margin: 4rem 0; color: #697178; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; text-align: center; text-transform: uppercase; }
 .skills-clear { padding: .35rem .8rem; border: 1px solid #b42332; border-radius: .4rem; background: transparent; color: #b42332; font-weight: 700; cursor: pointer; }
 .skills-actions .skills-clear { align-self: flex-start; }
 .skills-clear:hover { background: #b42332; color: #fff; }
 .skills-clear:focus-visible { outline: 2px solid #b42332; outline-offset: 2px; }
-.skills-results[hidden], .skills-results .project-list-item[hidden], .skills-results-empty[hidden], .skills-prompt[hidden], .skills-clear[hidden] { display: none; }
-.skills-results-empty { margin: 4rem 0; }
+.skills-results[hidden], .skills-results .project-list-item[hidden], .skills-status[hidden], .skills-clear[hidden] { display: none; }
 .project-list-item__feature-section { margin-top: 1.25rem; }
 .project-list-item__features { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
 .project-list-item__features li { padding: .2rem .65rem; border: 1px solid #6f42a1; border-radius: 999px; color: #6f42a1; font-size: .85rem; }
@@ -52,7 +50,7 @@
 [data-theme="dark"] .skills-list__count { color: #adb5bd; }
 [data-theme="dark"] .skills-list__pill[aria-pressed="true"] { color: #17191a; }
 [data-theme="dark"] .skills-list__pill:active { color: #fff; }
-[data-theme="dark"] .skills-prompt, [data-theme="dark"] .skills-results-empty { color: #555c63; }
+[data-theme="dark"] .skills-status { color: #555c63; }
 [data-theme="dark"] .skills-clear { border-color: #ff7884; color: #ff7884; }
 [data-theme="dark"] .skills-clear:hover { background: #a52231; color: #fff; }
 [data-theme="dark"] .project-list-item__features li { border-color: #b89bff; color: #b89bff; }

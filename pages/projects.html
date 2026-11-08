@@ -7,7 +7,11 @@ weight: 1
 
 <link rel="stylesheet" href="{{ '/assets/css/projects.css' | relative_url }}">
 
-<section class="project-list" aria-label="Projects">
+<div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 class="page-heading">Projects</h1>
+</div>
+
+<section class="project-list col-lg-10 mx-auto" aria-label="Projects">
   {% assign sort_records = '' %}
   {% for project in site.projects %}
     {% assign date_parts = project.end_date | split: '-' %}

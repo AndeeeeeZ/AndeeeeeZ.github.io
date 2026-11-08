@@ -7,18 +7,17 @@ weight: 3
 
 <link rel="stylesheet" href="{{ '/assets/css/projects.css' | relative_url }}">
 
-<div class="col-lg-10 mx-auto mt-5 markdown-body skills-page">
-<h1>Skills</h1>
+<div class="col-lg-10 mx-auto mt-5 markdown-body">
+<h1 class="page-heading">Skills</h1>
 
 {% include about/skills-list.html %}
 
 <div class="skills-actions">
   <button type="button" class="skills-clear" hidden>Clear selected</button>
-  <p class="skills-prompt" role="status">Click any skill to view relevant projects.</p>
 </div>
 </div>
 
-<section class="project-list skills-results" aria-label="Matching projects" hidden>
+<section class="project-list col-lg-10 mx-auto skills-results" aria-label="Matching projects" hidden>
   {% assign sort_records = '' %}
   {% for project in site.projects %}
     {% unless project.published == false %}
@@ -52,6 +51,6 @@ weight: 3
     {% include project-list-item.html project=project filterable=true %}
   {% endfor %}
 </section>
-<p class="skills-results-empty" role="status" hidden>No projects match all selected skills.</p>
+<p class="skills-status" role="status">Click any skill to view relevant projects.</p>
 
 <script src="{{ '/assets/js/skills-filter.js' | relative_url }}" defer></script>

@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const buttons = [...document.querySelectorAll('.skills-list__pill[data-skill]')];
   const results = document.querySelector('.skills-results');
-  const empty = document.querySelector('.skills-results-empty');
-  const prompt = document.querySelector('.skills-prompt');
+  const status = document.querySelector('.skills-status');
   const clear = document.querySelector('.skills-clear');
-  if (!results || !empty || !prompt || !clear) return;
+  if (!results || !status || !clear) return;
 
   const projects = [...results.querySelectorAll('.project-list-item[data-tools]')];
   const toolsByProject = projects.map(project => JSON.parse(project.dataset.tools) || []);
@@ -26,8 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (show) matches += 1;
     });
     results.hidden = selected.length === 0 || matches === 0;
-    empty.hidden = selected.length === 0 || matches > 0;
-    prompt.hidden = selected.length > 0;
+    status.textContent = selected.length === 0
+      ? 'Click any skill to view relevant projects.'
+      : 'No project matches all selected skills.';
+    status.hidden = selected.length > 0 && matches > 0;
     clear.hidden = selected.length === 0;
   }
 
