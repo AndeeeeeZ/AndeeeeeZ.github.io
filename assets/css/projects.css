@@ -1,5 +1,6 @@
 .project-list { display: grid; gap: 1.5rem; margin: 2rem 0 4rem; }
 .project-list-item { display: grid; grid-template-columns: minmax(12rem, 32%) minmax(0, 1fr); overflow: hidden; border-radius: 1rem; background: #242424; color: #e9e9e9; }
+.project-list-item--top { background: #303038; }
 .project-list-item--no-image { grid-template-columns: 1fr; }
 .project-list-item__image { display: block; min-height: 15rem; background: #363636; }
 .project-list-item__image img { width: 100%; height: 100%; object-fit: cover; }

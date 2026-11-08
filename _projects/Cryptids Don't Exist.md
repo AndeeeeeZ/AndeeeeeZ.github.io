@@ -1,11 +1,15 @@
 ---
-name: The Movies Project
-tools: [C#, XML, WPF]
-image: https://www.sketchappsources.com/resources/source-image/movie-badges-jurajjurik.png
-description: This project has an individual showcase page, not just a direct link to the project site or repo. Now you have more space to describe your awesome project!
+name: Cryptids Don't Exist
+tools: [C#, Unity 2D]
+features: [Team Project, Mini Games]
+start_date: 09-2026
+end_date: 10-2026
+image: /assets/project-cover/CryptidsDontExistCover.png
+description: Team Project
+external_url: https://andeeeeez.itch.io/cryptids-dont-exist
 ---
 
-# The Movies Project
+# Cryptids Don't Exist
 
 The Movies Project is something like **Netflix**, the only difference is that **it's not real**! It doesn't exist! I just created it to demonstrate how the **showcase** page looks like and how you can write whatever you want with full markdown support.
 

@@ -1,6 +1,6 @@
 {% assign project = include.project %}
 {% assign project_url = project.external_url | default: project.url %}
-<article class="project-list-item{% unless project.image %} project-list-item--no-image{% endunless %}">
+<article class="project-list-item{% unless project.image %} project-list-item--no-image{% endunless %}{% if project.top == true %} project-list-item--top{% endif %}">
   {% if project.image %}
     <a class="project-list-item__image" href="{{ project_url }}" aria-label="View {{ project.name | escape }}">
       <img src="{% if project.image contains '://' %}{{ project.image }}{% else %}{{ project.image | relative_url }}{% endif %}" alt="{{ project.name | escape }} preview" loading="lazy">
@@ -10,10 +10,28 @@
     <div class="project-list-item__heading">
       <h2><a href="{{ project_url }}">{{ project.name | escape }}</a></h2>
       {% if project.start_date %}
+        {% assign start_parts = project.start_date | split: '-' %}
+        {% if start_parts[0].size == 4 %}
+          {% assign start_date_value = project.start_date | append: '-01' %}
+          {% assign start_date_iso = project.start_date %}
+        {% else %}
+          {% assign start_date_value = start_parts[1] | append: '-' | append: start_parts[0] | append: '-01' %}
+          {% assign start_date_iso = start_parts[1] | append: '-' | append: start_parts[0] %}
+        {% endif %}
+        {% if project.end_date %}
+          {% assign end_parts = project.end_date | split: '-' %}
+          {% if end_parts[0].size == 4 %}
+            {% assign end_date_value = project.end_date | append: '-01' %}
+            {% assign end_date_iso = project.end_date %}
+          {% else %}
+            {% assign end_date_value = end_parts[1] | append: '-' | append: end_parts[0] | append: '-01' %}
+            {% assign end_date_iso = end_parts[1] | append: '-' | append: end_parts[0] %}
+          {% endif %}
+        {% endif %}
         <p class="project-list-item__date">
-          <time datetime="{{ project.start_date | date: '%Y-%m' }}">{{ project.start_date | date: '%b %Y' }}</time>
+          <time datetime="{{ start_date_iso }}">{{ start_date_value | date: '%b %Y' }}</time>
           <span aria-hidden="true">–</span>
-          {% if project.end_date %}<time datetime="{{ project.end_date | date: '%Y-%m' }}">{{ project.end_date | date: '%b %Y' }}</time>{% else %}Current{% endif %}
+          {% if project.end_date %}<time datetime="{{ end_date_iso }}">{{ end_date_value | date: '%b %Y' }}</time>{% else %}Current{% endif %}
         </p>
       {% endif %}
     </div>
