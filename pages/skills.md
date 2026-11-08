@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Skills
 permalink: /skills/
 weight: 3
@@ -7,13 +7,15 @@ weight: 3
 
 <link rel="stylesheet" href="{{ '/assets/css/projects.css' | relative_url }}">
 
-# Skills
+<div class="col-lg-10 mx-auto mt-5 markdown-body">
+<h1>Skills</h1>
 
 {% include about/skills-list.html %}
 
 <div class="skills-actions">
   <button type="button" class="skills-clear" hidden>Clear selected</button>
   <p class="skills-prompt" role="status">Click any skill to view relevant projects.</p>
+</div>
 </div>
 
 <section class="project-list skills-results" aria-label="Matching projects" hidden>
