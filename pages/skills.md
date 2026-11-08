@@ -7,7 +7,7 @@ weight: 3
 
 <link rel="stylesheet" href="{{ '/assets/css/projects.css' | relative_url }}">
 
-<div class="col-lg-10 mx-auto mt-5 markdown-body">
+<div class="col-lg-10 mx-auto mt-5 markdown-body skills-page">
 <h1>Skills</h1>
 
 {% include about/skills-list.html %}
