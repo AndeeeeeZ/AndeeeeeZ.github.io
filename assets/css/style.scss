@@ -5,6 +5,49 @@
 .navbar-brand h5 { font-size: clamp(1.25rem, 2.5vw, 1.625rem); }
 .navbar-themed .navbar-nav .nav-link { font-size: clamp(1.1rem, 1.8vw, 1.25rem); }
 
+@media (min-width: 992px) {
+  .navbar-themed .navbar-nav .nav-link + .nav-link { margin-left: 0.4rem; }
+  .navbar-themed .navbar-nav .nav-link:has(> .fab) { width: 2.5rem; text-align: center; }
+}
+
+#theme-toggler { position: relative; width: 2.5rem; min-height: 2.5rem; cursor: pointer; }
+
+#theme-toggler::before,
+#theme-toggler::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 1.25em;
+  height: auto;
+  background: none;
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+[data-theme="light"] #theme-toggler::before,
+[data-theme="dark"] #theme-toggler::before { content: "\f186"; }
+#theme-toggler::after { content: "\f185"; }
+
+[data-theme="light"] #theme-toggler::before,
+[data-theme="dark"] #theme-toggler::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0) scale(1);
+}
+
+[data-theme="light"] #theme-toggler::after {
+  transform: translate(-50%, -50%) rotate(-75deg) scale(0.65);
+}
+
+[data-theme="dark"] #theme-toggler::before {
+  transform: translate(-50%, -50%) rotate(75deg) scale(0.65);
+}
+
 .home-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -36,6 +79,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  #theme-toggler::before, #theme-toggler::after { transition: none; }
   .home-intro-portrait, .home-intro-portrait img { animation: none; }
 }
 

@@ -26,6 +26,11 @@ github:
   icon  : fab fa-github
   color : 333333
 
+itchio:
+  url   : https://
+  icon  : fab fa-itch-io
+  color : fa5c5c
+
 gitlab:
   url   : https://www.gitlab.com/
   icon  : fab fa-gitlab
