@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 weight: 4
+description: Learn about Andi Zhu, a game development student, and find links to projects and profiles.
 ---
 
 # About Me

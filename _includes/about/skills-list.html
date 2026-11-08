@@ -13,27 +13,3 @@
     {% endfor %}
   </ul>
 {% endfor %}
-
-{% assign known_skills = '|' %}
-{% for section in site.data.skills %}
-  {% for skill in section.skills %}
-    {% assign skill_key = skill | prepend: '|' | append: '|' %}
-    {% assign known_skills = known_skills | append: skill_key %}
-  {% endfor %}
-{% endfor %}
-{% assign missing_skills = '' %}
-{% for project in site.projects %}
-  {% unless project.published == false %}
-    {% for tool in project.tools %}
-      {% assign tool_key = tool | prepend: '|' | append: '|' %}
-      {% unless known_skills contains tool_key %}
-        {% unless missing_skills contains tool_key %}
-          {% assign missing_skills = missing_skills | append: tool_key %}
-        {% endunless %}
-      {% endunless %}
-    {% endfor %}
-  {% endunless %}
-{% endfor %}
-{% if missing_skills != '' %}
-  <p class="skills-list__notice">Project tools missing from the skills list: {{ missing_skills | remove_first: '|' | split: '||' | join: ', ' | remove: '|' | escape }}. Add them to <code>_data/skills.yml</code>.</p>
-{% endif %}

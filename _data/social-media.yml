@@ -13,6 +13,7 @@ dribbble:
 
 email:
   url   : "mailto:"
+  label : Email Andi Zhu
   icon  : fas fa-envelope
   color : db4437
 
@@ -23,11 +24,13 @@ facebook:
 
 github:
   url   : https://www.github.com/
+  label : GitHub
   icon  : fab fa-github
   color : 333333
 
 itchio:
   url   : https://
+  label : itch.io
   icon  : fab fa-itch-io
   color : fa5c5c
 
@@ -48,6 +51,7 @@ kaggle:
 
 linkedin:
   url   : https://www.linkedin.com/in/
+  label : LinkedIn
   icon  : fab fa-linkedin-in
   color : 007bb5
 

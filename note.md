@@ -15,12 +15,15 @@ Each time you reopen VS Code:
 
    ```powershell
    $env:SSL_CERT_FILE = 'C:\Ruby31-x64\ssl\cert.pem'
+   bundle exec ruby scripts/check-skills.rb
    bundle exec jekyll serve --livereload
    ```
 
 3. Open <http://localhost:4000> in your browser.
 
 Keep the terminal running while you work. Saved changes should refresh the page. Press `Ctrl+C` to stop the server.
+
+Run `bundle exec ruby scripts/check-skills.rb` again after changing project tools or the skills list. It prints missing tools in the terminal. Run it before `bundle exec jekyll build` too.
 
 The command is `jekyll serve`, not `jekyll server`.
 

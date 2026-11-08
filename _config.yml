@@ -1,6 +1,7 @@
 ### Site Settings ###
 title               : Andi Zhu | Game Dev
 description         : A Game Dev and Programmer
+url                 : https://andeeeeez.github.io
 baseurl             : ""            # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : AndeeeeeZ/AndeeeeeZ.github.io      # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : yousinix/portfolYOU
@@ -109,3 +110,5 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+  - documentation/partials/
+  - scripts/

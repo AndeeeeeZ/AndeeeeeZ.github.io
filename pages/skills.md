@@ -3,6 +3,7 @@ layout: default
 title: Skills
 permalink: /skills/
 weight: 3
+description: Explore the tools, game features, and programming languages used in Andi Zhu's projects.
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/projects.css' | relative_url }}">

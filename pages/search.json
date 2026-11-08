@@ -1,6 +1,7 @@
 ---
 layout: null
 permalink: /search.json
+published: false
 ---
 [
   {% for post in site.posts %}
